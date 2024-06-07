@@ -12,10 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('suportes', function (Blueprint $table) {
+            $table->charset('utf8mb4');
+            $table->collation('utf8mb4_unicode_ci');
             $table->id();
             $table->string('nome');
             $table->string('email')->unique();
             $table->string('msg');
+            $table->enum('atendimento',['Em atendimento','Aguardando','Resolvido'])->default('Aguardando');
+            $table->string('solucao')->default('');
             $table->timestamps();
         });
     }

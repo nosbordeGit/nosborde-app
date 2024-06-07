@@ -16,7 +16,7 @@ class SuporteController extends Controller
     //$data = $request->all();
    // Suporte::create($data);
    // dd($data);
-    Suporte::create($request->only(['nome','email','msg']));
+    Suporte::create($request->only(['nome','email','msg','atendimento','solucao']));
     return redirect()->route('suporte.listar');
 
    }
@@ -26,5 +26,11 @@ class SuporteController extends Controller
     $result = Suporte::orderBy('created_at','ASC')->get();
     //dd($result);
     return view('site.listar', ['result' =>$result]);
+   }
+   
+   public function atendimento(Suporte $suporte)
+   {
+    //dd($suporte);
+    return view('site.atendimento', ['item'=>$suporte]);
    }
 }

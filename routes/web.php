@@ -28,3 +28,4 @@ Route::get('/sobre',[SiteController::class,'sobre'])->name('site.sobre');
 Route::get('/suporte/create',[SuporteController::class,'create'])->name('suporte.create');
 Route::POST('/suporte/create',[SuporteController::class,'store'])->name('suporte.store');
 Route::get('/suporte/listar',[SuporteController::class,'listar'])->name('suporte.listar');
+Route::get('/suporte/atendimento/{suporte}',[SuporteController::class,'atendimento'])->name('suporte.atendimento');

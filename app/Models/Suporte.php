@@ -12,6 +12,8 @@ class Suporte extends Model
     [   
         'nome',
         'email',
-        'msg'
+        'msg',
+        'atendimento',
+        'solucao'
     ];
 }
