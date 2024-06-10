@@ -40,8 +40,17 @@ class SuporteController extends Controller
     return view('site.alterar',['item'=>$suporte]);
    }
 
-   public function update()
+   public function update(Request $request, Suporte $suporte)
    {
+    //dd($request);
+    $suporte->update([
+        'nome' =>$request->nome,
+        'email' =>$request->email,
+        'msg' =>$request->msg,
+        'atendimento' =>$request->atendimento,
+        'solucao' =>$request->solucao,
+
+    ]);
     return ('Update');
    }
 }

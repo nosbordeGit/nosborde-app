@@ -21,7 +21,7 @@
                 <td>{{$item->email}}</td>
                 <td>{{$item->msg}}</td>
                 <!-- adicionando a rota de atendimento passando para a rota o id do usuario -->
-                <td><a href="{{route('suporte.atendimento',['suporte'=>$item->id])}}" class="btn btn-success" role="button">Atender</a></td>            
+                <td><a href="{{route('suporte.alterar',['suporte'=>$item->id])}}" class="btn btn-success" role="button">Atender</a></td>            
           </tr>
         </tbody>
       </table>
