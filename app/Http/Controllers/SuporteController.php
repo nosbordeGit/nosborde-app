@@ -33,4 +33,15 @@ class SuporteController extends Controller
     //dd($suporte);
     return view('site.atendimento', ['item'=>$suporte]);
    }
+
+   public function alterar(Suporte $suporte)
+   {
+    //dd($suporte);
+    return view('site.alterar',['item'=>$suporte]);
+   }
+
+   public function update()
+   {
+    return ('Update');
+   }
 }
