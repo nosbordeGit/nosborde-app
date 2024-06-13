@@ -30,4 +30,5 @@ Route::POST('/suporte/create',[SuporteController::class,'store'])->name('suporte
 Route::get('/suporte/listar',[SuporteController::class,'listar'])->name('suporte.listar');
 Route::get('/suporte/atendimento/{suporte}',[SuporteController::class,'atendimento'])->name('suporte.atendimento');
 Route::get('/suporte/alterar/{suporte}',[SuporteController::class,'alterar'])->name('suporte.alterar');
-Route::put('/suporte/update',[SuporteController::class,'update'])->name('suporte.update');
+Route::put('/suporte/update/{suporte}',[SuporteController::class,'update'])->name('suporte.update');
+Route::get('/suporte/delete/{suporte}',[SuporteController::class,'delete'])->name('suporte.delete');

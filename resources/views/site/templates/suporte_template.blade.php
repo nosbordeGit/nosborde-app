@@ -50,8 +50,8 @@
                         <a class="nav-link" href="{{route('suporte.create')}}">Cadastro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Analytics</a>
-                    </li>
+                        <a class="nav-link" href="{{route('suporte.listar')}}">Listar</a>
+                    </li>                   
                 </ul>
             </div>
 

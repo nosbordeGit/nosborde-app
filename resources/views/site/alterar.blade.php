@@ -3,7 +3,8 @@
 @section('content') 
   <div class="container">
     <h2 class="mt-5">Formulário de Contato</h2>
-    <form action="{{route('suporte.update')}}" method="POST">
+    {{-- Linha alterada no formuulario para passar os dados do formulario utilizando o ID correto--}}
+    <form action="{{route('suporte.update',['suporte' => $item->id])}}" method="POST">
       {{-- cria um toquem para validar o formulario eviando ataques do tipo csrf--}}
       @csrf()
       {{--insere o metodo PUT para receber os dados do formulario para alteração--}}

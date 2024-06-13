@@ -19,7 +19,8 @@
             <td>{{$item->email}}</td>
             <td>{{$item->msg}}</td>
             <!-- adicionando a rota de atendimento passando para a rota o id do usuario -->
-            <td><a href="{{route('suporte.atendimento',['suporte'=>$item->id])}}" class="btn btn-primary" role="button">Atendimento</a></td>            
+            <td><a href="{{route('suporte.atendimento',['suporte'=>$item->id])}}" class="btn btn-primary" role="button">{{$item->atendimento}}</a></td>
+            <td><a href="{{route('suporte.delete',['suporte'=>$item->id])}}" class="btn btn-danger" role="button">Deletar</a></td>            
       </tr>
       @endforeach 
     </tbody>

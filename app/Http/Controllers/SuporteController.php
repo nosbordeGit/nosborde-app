@@ -46,11 +46,16 @@ class SuporteController extends Controller
     $suporte->update([
         'nome' =>$request->nome,
         'email' =>$request->email,
-        'msg' =>$request->msg,
         'atendimento' =>$request->atendimento,
         'solucao' =>$request->solucao,
 
     ]);
-    return ('Update');
+    return redirect()->route('suporte.listar');
+   }
+
+   public function delete(Suporte $suporte)
+   {
+    $suporte->delete();
+    return redirect()->route('suporte.listar');
    }
 }
