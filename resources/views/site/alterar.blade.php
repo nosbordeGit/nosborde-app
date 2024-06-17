@@ -11,11 +11,11 @@
       @method('PUT')
       <div class="form-group">
         <label for="name">Nome:</label>
-        <input type="text" class="form-control" id="name" name='nome' placeholder="Nome"  value="{{$item->nome}}">
+        <input type="text" class="form-control" id="name" name='nome' placeholder="Nome"  value="{{$item->nome}}" readonly>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" name='email' placeholder="Digite seu email"  value="{{$item->email}}">
+        <input type="email" class="form-control" id="email" name='email' placeholder="Digite seu email"  value="{{$item->email}}" readonly>
       </div>
       <div class="form-group">
         <label for="message">Mensagem:</label>

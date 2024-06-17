@@ -3,12 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteController;
 Use App\Http\Controllers\SuporteController;
+Use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
-/*
-Route::get('/', function () {
+
+Route::get('/ed', function () {
     return view('welcome');
-});*/
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -17,8 +18,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');   
 });
 
 require __DIR__.'/auth.php';
@@ -32,3 +32,5 @@ Route::get('/suporte/atendimento/{suporte}',[SuporteController::class,'atendimen
 Route::get('/suporte/alterar/{suporte}',[SuporteController::class,'alterar'])->name('suporte.alterar');
 Route::put('/suporte/update/{suporte}',[SuporteController::class,'update'])->name('suporte.update');
 Route::get('/suporte/delete/{suporte}',[SuporteController::class,'delete'])->name('suporte.delete');
+Route::get('/suporte/listar',[SuporteController::class,'listar'])->middleware(['auth', 'verified'])->name('suporte.listar');
+Route::get('/suporte/sair',[AuthenticatedSessionController::class,'destroy'])->name('suporte.sair');
